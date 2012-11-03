@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family: "QuicksandLight";
+	src: url("font/Quicksand_Light.otf");
+}
+
+@font-face {
+	font-family: "QuicksandBook";
+	src: url("font/Quicksand_Book.otf");
+}
+@font-face {
+	font-family: "QuicksandBold";
+	src: url("font/Quicksand_Bold.otf");
+}
+
+header {
+	background: url('img/horizontal_header_slice.png') repeat-x;
+	height: 446px;
+	width: 100%;
+}
+header h1 {
+	width: 756px;
+	height: 446px;
+	display: block;
+	background: url('img/NPI_header.png');
+}
+header h1 span {
+	visibility: none;
+}
+
+#main {
+	position: absolute;
+	top: 446px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #316067;
+	font-family: 'QuicksandBook', Verdana, sans-serif;
+	padding: 25px 0 55px 55px;
+	color: #000000;
+	line-height: 24px;
+}
+#main section {
+	background-color: #e9f2f3;
+	border-radius: 8px;
+	padding: 30px 10px 30px 10px;
+	width: 670px;
+	text-align: center;
+
+   text-shadow: 0 0 8px #fff;
+
+}
+#main section p {
+	font-size: 19px;
+	margin-bottom: 37px;
+   	text-shadow: 0 0 8px #fff;
+}
+#main section p.dominant {
+	font-family: 'QuicksandBold', Verdana, sans-serif;
+   	text-shadow: 0 0 8px #fff;
+	font-size: 28px;
+	margin-bottom: 25px;
+}
+#main form {
+	display: block;
+	text-align: left;
+}
+#main form select {
+	display: inline-block;
+	width: 280px;
+	height: 36px;
+	padding-left: 10px;
+	margin-left: 180px;
+	background: #fff;
+	border: 1px #3880a5 solid;
+	font-size: 17px;
+	margin-right: 18px;
+}
+#main form input {
+	font-family: 'QuicksandBold', Verdana, sans-serif;
+	font-size: 21px;
+	color: #fff;
+	background: #b79e37;
+	height: 36px;
+	padding: 0 8px;
+
+}
+
+#main form input:hover {
+	text-decoration: underline;
+}
