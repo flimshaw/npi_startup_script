@@ -21,6 +21,29 @@
 	<title> Hello. Welcome to NPI!</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#form").validate({
+				debug: false,
+				rules: {
+					wifi_password: "required"
+				},
+				messages: {
+					wifi_password: "Please enter your password.",
+				},
+				submitHandler: function(form) {
+					// do other stuff for a valid form
+					$.post('process_wifi_form.php', $("#form").serialize(), function(data) {
+						$('#results').html(data);
+					});
+				}
+			});
+		});
+	</script>
+		
 </head>
 <body>
 	<header>
@@ -39,7 +62,7 @@
 			</p>
 			<p class="dominant">step 1: choose your wireless network</p>
 			<div class="wifi_choice">
-			<form>
+			<form id="form" >
 				<select name="wifi_networkname">
 <?
 				foreach ($trimmed_wifi_arr as $wifi) {
@@ -52,11 +75,19 @@
 	
 				<p class="dominant">step 2: enter your password</p>
 				
-				<input type="text" name="wifi_password">
+				<label for="wifi_password"></label>
+				<input 
+					class="unclicked"
+					type="text" 
+					name="wifi_password"
+					value="your wifi password"
+					onclick="if (this.value=='your wifi password'){ this.value=''; this.className=''}"
+				>
 				
 				<input type="submit" value="Submit">
 			</form>
 		</section>
+		<section id="results"></section>
 	</div>
 </body>
 </html>

@@ -88,7 +88,11 @@ header h1 span {
 	height: 36px;
 	padding-left: 4px;
 	font-family: 'Lucida Grande', 'QuicksandBold', Verdana, sans-serif;
-	font-size: 21px;
+	font-size: 18px;
+	color: #000;
+}
+#main form input.unclicked {
+	color: #888;
 }
 #main form input[type='submit'] {
 	display: block;
@@ -104,3 +108,7 @@ header h1 span {
 #main form input:hover {
 	text-decoration: underline;
 }
+label {
+	display: none;
+}
+label.error { text-align: center; display: block; color: red;}
