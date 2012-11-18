@@ -11,3 +11,8 @@ cd ~/code/npi_startup_script/
 
 start server:
  php -S 192.168.1.122:3000
+
+
+
+File you're trying to write to is:
+/etc/network/interfaces
